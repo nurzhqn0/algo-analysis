@@ -1,4 +1,4 @@
-# Algorithm Performance Analysis - Assignment 1
+# Design and Analysis of Algorithms - Assignment 1
 
 ## Overview
 
@@ -160,3 +160,4 @@ java -jar target/daa-assignment1-1.0-SNAPSHOT.jar
 
 ## Author
 **nurzhqn0** - Implementation and analysis of divide-and-conquer algorithms with comprehensive performance evaluation.
+
