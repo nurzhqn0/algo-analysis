@@ -1,5 +1,10 @@
 package algoAnalysis.metrics;
 
+/**
+ * Algorithm Metrics class
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class AlgorithmMetrics {
     private long comparisons;
     private long swaps;

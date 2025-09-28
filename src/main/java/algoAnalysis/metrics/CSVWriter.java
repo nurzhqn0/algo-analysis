@@ -6,6 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * CSV Writer
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class CSVWriter {
     public static void writeToCSV(String filename, List<String[]> data) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {

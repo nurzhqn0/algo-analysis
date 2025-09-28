@@ -5,6 +5,11 @@ import algoAnalysis.metrics.AlgorithmMetrics;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Quick Sort
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class QuickSort {
     public static int partition(ArrayList<Integer> arr, int low, int high, AlgorithmMetrics metrics) {
         Random random = new Random();

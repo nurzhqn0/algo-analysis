@@ -4,6 +4,11 @@ import algoAnalysis.metrics.AlgorithmMetrics;
 
 import java.util.ArrayList;
 
+/**
+ * Deterministic Selection
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class DeterministicSelect {
     private static final int GROUP_SIZE = 5;
 

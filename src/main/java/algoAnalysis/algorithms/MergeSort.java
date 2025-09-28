@@ -4,6 +4,11 @@ import algoAnalysis.metrics.AlgorithmMetrics;
 
 import java.util.ArrayList;
 
+/**
+ * Merge Sort
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class MergeSort {
     private static final int INSERTION_SORT_CUTOFF = 15;
 

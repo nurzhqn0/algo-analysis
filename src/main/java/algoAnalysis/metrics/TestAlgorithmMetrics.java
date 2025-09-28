@@ -1,5 +1,10 @@
 package algoAnalysis.metrics;
 
+/**
+ * Test Algorithm Metrics
+ * @author nurzhqn0
+ * @version 1.0
+ */
 public class TestAlgorithmMetrics extends AlgorithmMetrics {
     private long comparisons = 0;
     private long assignments = 0;

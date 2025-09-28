@@ -15,6 +15,11 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test for Quick Sort
+ * @author nurzhqn0
+ * @version 1.0
+ */
 class QuickSortTest {
 
     private TestAlgorithmMetrics metrics;
