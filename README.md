@@ -159,5 +159,6 @@ java -jar target/daa-assignment1-1.0-SNAPSHOT.jar
 - AssertJ 3.25.1 for fluent test assertions
 
 ## Author
-**nurzhqn0** - Implementation and analysis of divide-and-conquer algorithms with comprehensive performance evaluation.
+[**nurzhqn0**](https://github.com/nurzhqn0)
+
 
