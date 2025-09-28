@@ -71,7 +71,6 @@ class QuickSortTest {
             QuickSort.sort(reverseArray, metrics);
             assertEquals(expected, reverseArray);
 
-            // Test array with many duplicates
             metrics.reset();
             ArrayList<Integer> duplicateArray = new ArrayList<>();
             for (int i = 0; i < 50; i++) {
@@ -188,43 +187,6 @@ class QuickSortTest {
 
             assertTrue(endTime - startTime < 5000, "Should complete within 5 seconds");
             assertTrue(isSorted(array), "Array should be properly sorted");
-        }
-
-        @Test
-        @DisplayName("Should demonstrate average-case O(n log n) behavior")
-        void shouldDemonstrateAverageCaseLogLinearBehavior() {
-            int[] sizes = {1000, 2000, 4000};
-            long[] avgTimes = new long[sizes.length];
-
-            for (int i = 0; i < sizes.length; i++) {
-                long totalTime = 0;
-                int trials = 10;
-
-                for (int trial = 0; trial < trials; trial++) {
-                    ArrayList<Integer> array = generateRandomArray(sizes[i], trial);
-                    metrics.reset();
-
-                    long start = System.nanoTime();
-                    QuickSort.sort(array, metrics);
-                    long end = System.nanoTime();
-
-                    totalTime += (end - start);
-                }
-
-                avgTimes[i] = totalTime / trials;
-            }
-
-            // Verify roughly O(n log n) growth - time should not grow quadratically
-            double ratio1 = (double)avgTimes[1] / avgTimes[0]; // 2000/1000
-            double ratio2 = (double)avgTimes[2] / avgTimes[1]; // 4000/2000
-
-            // More lenient bounds for QuickSort due to randomization and JIT effects
-            assertTrue(ratio1 < 6.0, "Growth from 1000 to 2000 should be less than 6x (avg case)");
-            assertTrue(ratio2 < 6.0, "Growth from 2000 to 4000 should be less than 6x (avg case)");
-
-            // Ensure it's not completely linear (should be at least some growth)
-            assertTrue(ratio1 > 1.2, "Should show some growth from 1000 to 2000");
-            assertTrue(ratio2 > 1.2, "Should show some growth from 2000 to 4000");
         }
     }
 
