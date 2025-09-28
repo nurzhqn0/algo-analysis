@@ -1,6 +1,6 @@
 package algoAnalysis.algorithms;
 
-import algoAnalysis.metrics.AlgorithmMetrics;
+import algoAnalysis.metrics.TestAlgorithmMetrics;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -27,58 +27,6 @@ class QuickSortTest {
     /**
      * Test implementation of AlgorithmMetrics for testing purposes
      */
-    private static class TestAlgorithmMetrics extends AlgorithmMetrics {
-        private int comparisons = 0;
-        private int swaps = 0;
-        private int recursionDepth = 0;
-        private int maxRecursionDepth = 0;
-        private boolean timingStarted = false;
-        private boolean timingStopped = false;
-        private long startTime;
-        private long endTime;
-
-        @Override
-        public void incrementComparisons() {
-            comparisons++;
-        }
-
-        @Override
-        public void incrementSwaps() {
-            swaps++;
-        }
-
-        @Override
-        public void enterRecursion() {
-            recursionDepth++;
-            maxRecursionDepth = Math.max(maxRecursionDepth, recursionDepth);
-        }
-
-        @Override
-        public void exitRecursion() {
-            recursionDepth--;
-        }
-
-        @Override
-        public void startTiming() {
-            timingStarted = true;
-            startTime = System.nanoTime();
-        }
-
-        @Override
-        public void stopTiming() {
-            timingStopped = true;
-            endTime = System.nanoTime();
-        }
-
-        // Getters for testing
-        public long getComparisons() { return comparisons; }
-        public long getSwaps() { return swaps; }
-        public int getMaxRecursionDepth() { return maxRecursionDepth; }
-        public boolean isTimingStarted() { return timingStarted; }
-        public boolean isTimingStopped() { return timingStopped; }
-        public long getExecutionTime() { return endTime - startTime; }
-    }
-
     @Nested
     @DisplayName("Basic Sorting Tests")
     class BasicSortingTests {
