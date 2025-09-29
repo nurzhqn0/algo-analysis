@@ -39,27 +39,7 @@ jobs:
         if: always()
         with:
           name: test-results-java-${{ matrix.java-version }}
-          path: |
-            target/surefire-reports/
-            target/site/jacoco/
-
-      - name: Upload coverage to Codecov (Java 11 only)
-        if: matrix.java-version == '11'
-        uses: codecov/codecov-action@v4
-        with:
-          file: ./target/site/jacoco/jacoco.xml
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
-
-      - name: Comment coverage on PR
-        if: github.event_name == 'pull_request' && matrix.java-version == '11'
-        uses: madrapps/jacoco-report@v1.6.1
-        with:
-          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 70
-          min-coverage-changed-files: 80
+          path: target/surefire-reports/
 
   build-jar:
     runs-on: ubuntu-latest
